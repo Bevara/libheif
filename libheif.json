@@ -1,0 +1,23 @@
+{
+    "name": "libheif",
+    "description": "HEIF/AVIF image decoder",
+    "filters":["heifdec","rfheif"],
+    "help": "This filter decodes HEIF/HEIC/AVIF images using libheif.",
+    "support": [
+        "image"
+    ],
+    "sources":"https://bevara.ddns.net/sources/libheif.accessor",
+    "filter_source":{
+        "heifdec" : "dec_heif.c",
+        "rfheif" : "reframe_heif.c"
+    },
+    "extension":{
+      "heic" : "img",
+      "heics" : "img",
+      "heif" : "img",
+      "heifs" : "img",
+      "avif" : "img",
+      "avifs" : "img"
+    },
+    "licence_required":false
+}
