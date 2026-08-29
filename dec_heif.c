@@ -142,8 +142,6 @@ static GF_Err heifdec_process(GF_Filter *filter)
 		u32 dst_stride = (u32)width * bytes_per_pixel;
 		u32 out_size = dst_stride * (u32)height;
 
-		GF_LOG(GF_LOG_ERROR, GF_LOG_CODEC, ("[HEIF] DEBUG width=%d height=%d src=%p src_stride=%zu bytes_per_pixel=%u dst_stride=%u out_size=%u\n", width, height, src, src_stride, bytes_per_pixel, dst_stride, out_size));
-
 		if (!src || width <= 0 || height <= 0)
 		{
 			heif_image_release(img);
@@ -174,24 +172,16 @@ static GF_Err heifdec_process(GF_Filter *filter)
 				memcpy(output + row * dst_stride, src + row * src_stride, dst_stride);
 			}
 		}
-		GF_LOG(GF_LOG_ERROR, GF_LOG_CODEC, ("[HEIF] DEBUG memcpy loop done\n"));
 	}
 
 	gf_filter_pck_merge_properties(pck, dst_pck);
-	GF_LOG(GF_LOG_ERROR, GF_LOG_CODEC, ("[HEIF] DEBUG merge_properties done\n"));
 	gf_filter_pck_set_dependency_flags(dst_pck, 0);
-	GF_LOG(GF_LOG_ERROR, GF_LOG_CODEC, ("[HEIF] DEBUG set_dependency_flags done\n"));
 	gf_filter_pck_send(dst_pck);
-	GF_LOG(GF_LOG_ERROR, GF_LOG_CODEC, ("[HEIF] DEBUG pck_send done\n"));
 
 	heif_image_release(img);
-	GF_LOG(GF_LOG_ERROR, GF_LOG_CODEC, ("[HEIF] DEBUG image_release done\n"));
 	heif_image_handle_release(handle);
-	GF_LOG(GF_LOG_ERROR, GF_LOG_CODEC, ("[HEIF] DEBUG handle_release done\n"));
 	heif_context_free(heif);
-	GF_LOG(GF_LOG_ERROR, GF_LOG_CODEC, ("[HEIF] DEBUG context_free done\n"));
 	gf_filter_pid_drop_packet(ctx->ipid);
-	GF_LOG(GF_LOG_ERROR, GF_LOG_CODEC, ("[HEIF] DEBUG drop_packet done\n"));
 
 	return GF_OK;
 }
