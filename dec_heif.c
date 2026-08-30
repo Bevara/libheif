@@ -1,7 +1,7 @@
 /*
  *			GPAC - Multimedia Framework C SDK
  *
- *  This file is part of GPAC / HEIF/AVIF image decoder filter
+ *  This file is part of GPAC / HEIF/HEIC image decoder filter
  *  based on libheif (https://github.com/strukturag/libheif)
  *
  */
@@ -197,8 +197,8 @@ static const GF_FilterCapability HEIFDecCaps[] =
 
 GF_FilterRegister HEIFDecoderRegister = {
 	.name = "heifdec",
-	GF_FS_SET_DESCRIPTION("HEIF/AVIF image decoder")
-		GF_FS_SET_HELP("This filter decodes HEIF/HEIC/AVIF images using libheif.")
+	GF_FS_SET_DESCRIPTION("HEIF/HEIC image decoder")
+		GF_FS_SET_HELP("This filter decodes HEIF/HEIC (HEVC-coded) images using libheif. For AVIF (AV1-coded), use the avif;libaom filter pair instead.")
 			.private_size = sizeof(GF_HEIFDecCtx),
 	SETCAPS(HEIFDecCaps),
 	.configure_pid = heifdec_configure_pid,

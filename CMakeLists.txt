@@ -13,7 +13,6 @@ SET(LIBHEIF_SRC
 SET(LIBHEIF_LIB
         ${CMAKE_CURRENT_SOURCE_DIR}/lib/libheif.a
         ${CMAKE_CURRENT_SOURCE_DIR}/lib/libde265.a
-        ${CMAKE_CURRENT_SOURCE_DIR}/lib/libaom.a
         ${CMAKE_CURRENT_SOURCE_DIR}/lib/libc++.a
         ${CMAKE_CURRENT_SOURCE_DIR}/lib/libc++abi.a
 )

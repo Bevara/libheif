@@ -1,7 +1,7 @@
 /*
  *			GPAC - Multimedia Framework C SDK
  *
- *  This file is part of GPAC / HEIF/AVIF image reframer filter
+ *  This file is part of GPAC / HEIF image reframer filter
  *  based on libheif (https://github.com/strukturag/libheif)
  *
  */
@@ -219,16 +219,16 @@ static const char *rfheif_probe_data(const u8 *data, u32 size, GF_FilterProbeSco
 static const GF_FilterCapability ReframeHeifCaps[] =
 	{
 		CAP_UINT(GF_CAPS_INPUT, GF_PROP_PID_STREAM_TYPE, GF_STREAM_FILE),
-		CAP_STRING(GF_CAPS_INPUT, GF_PROP_PID_FILE_EXT, "heic|heics|heif|heifs|avif|avifs|hif"),
-		CAP_STRING(GF_CAPS_INPUT, GF_PROP_PID_MIME, "image/heic|image/heif|image/heic-sequence|image/heif-sequence|image/avif|image/avif-sequence"),
+		CAP_STRING(GF_CAPS_INPUT, GF_PROP_PID_FILE_EXT, "heic|heics|heif|heifs|hif"),
+		CAP_STRING(GF_CAPS_INPUT, GF_PROP_PID_MIME, "image/heic|image/heif|image/heic-sequence|image/heif-sequence"),
 		CAP_UINT(GF_CAPS_OUTPUT, GF_PROP_PID_STREAM_TYPE, GF_STREAM_VISUAL),
 		CAP_UINT(GF_CAPS_OUTPUT, GF_PROP_PID_CODECID, GF_4CC('H', 'E', 'I', 'F')),
 };
 
 GF_FilterRegister ReframeHeifRegister = {
 	.name = "rfheif",
-	GF_FS_SET_DESCRIPTION("HEIF/AVIF image reframer")
-		GF_FS_SET_HELP("This filter parses HEIF/AVIF image files/data (via libheif) and outputs corresponding visual PID and frames.\n")
+	GF_FS_SET_DESCRIPTION("HEIF image reframer")
+		GF_FS_SET_HELP("This filter parses HEIF/HEIC (HEVC-coded) image files/data (via libheif) and outputs corresponding visual PID and frames. For AVIF (AV1-coded), use the avif;libaom filter pair instead.\n")
 			.private_size = sizeof(GF_ReframeHeifCtx),
 	SETCAPS(ReframeHeifCaps),
 	.configure_pid = rfheif_configure_pid,
