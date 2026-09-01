@@ -236,7 +236,7 @@ GF_FilterRegister ReframeHeifRegister = {
 	.process = rfheif_process,
 	.process_event = rfheif_process_event};
 
-const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE dynCall_heif_reframe_register(GF_FilterSession *session)
+const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE heif_reframe_register(GF_FilterSession *session)
 {
 	return &ReframeHeifRegister;
 }
@@ -245,5 +245,5 @@ const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE dynCall_heif_reframe_register(GF_
 #include "filter_register.h"
 __attribute__((constructor))
 void register_heif_reframe(void) {
-    gf_filter_auto_register("heif_reframe", dynCall_heif_reframe_register);
+    gf_filter_auto_register("heif_reframe", heif_reframe_register);
 }

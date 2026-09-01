@@ -205,7 +205,7 @@ GF_FilterRegister HEIFDecoderRegister = {
 	.process = heifdec_process,
 };
 
-const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE dynCall_heifdec_register(GF_FilterSession *session)
+const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE heifdec_register(GF_FilterSession *session)
 {
 	return &HEIFDecoderRegister;
 }
@@ -214,5 +214,5 @@ const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE dynCall_heifdec_register(GF_Filte
 #include "filter_register.h"
 __attribute__((constructor))
 void register_heifdec(void) {
-    gf_filter_auto_register("heifdec", dynCall_heifdec_register);
+    gf_filter_auto_register("heifdec", heifdec_register);
 }
