@@ -18,5 +18,17 @@
       "heifs" : "img"
     },
     "licence_required":false,
-    "using": ["solver_1"]
+    "using": ["solver_1"],
+    "runtime": {
+        "heifdec": {
+            "outputs": [
+                {
+                    "property": "GF_PROP_PID_PIXFMT",
+                    "format": [
+                        "GF_PIXEL_RGB"
+                    ]
+                }
+            ]
+        }
+    }
 }
