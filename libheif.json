@@ -17,7 +17,6 @@
       "heif" : "img",
       "heifs" : "img"
     },
-    "licence_required":false,
     "using": ["solver_1"],
     "runtime": {
         "heifdec": {
@@ -30,5 +29,10 @@
                 }
             ]
         }
+    },
+    "patents": {
+        "status": "licence-required",
+        "note": "HEIC is HEVC: Access Advance, Via LA",
+        "checked": "2026-10-16"
     }
 }
