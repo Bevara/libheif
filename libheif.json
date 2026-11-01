@@ -1,5 +1,6 @@
 {
     "name": "libheif",
+    "version": "1.0.1",
     "description": "HEIF/HEIC image decoder",
     "filters":["heifdec","rfheif"],
     "help": "This filter decodes HEIF/HEIC (HEVC-coded) images using libheif. For AVIF (AV1-coded), use the lighter avif;libaom filter pair instead.",
@@ -17,7 +18,7 @@
       "heif" : "img",
       "heifs" : "img"
     },
-    "using": ["solver_1"],
+    "using": ["mm_solver_1.0.1"],
     "runtime": {
         "heifdec": {
             "outputs": [
