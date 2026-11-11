@@ -2,23 +2,32 @@
     "name": "libheif",
     "version": "1.0.1",
     "description": "HEIF/HEIC image decoder",
-    "filters":["heifdec","rfheif"],
+    "filters": [
+        "heifdec",
+        "rfheif"
+    ],
     "help": "This filter decodes HEIF/HEIC (HEVC-coded) images using libheif. For AVIF (AV1-coded), use the lighter avif;libaom filter pair instead.",
     "support": [
         "image"
     ],
-    "sources":"https://bevara.ddns.net/sources/libheif.accessor",
-    "filter_source":{
-        "heifdec" : "dec_heif.c",
-        "rfheif" : "reframe_heif.c"
+    "sources": "https://bevara.ddns.net/sources/libheif.accessor",
+    "filter_source": {
+        "heifdec": "dec_heif.c",
+        "rfheif": "reframe_heif.c"
     },
-    "extension":{
-      "heic" : "img",
-      "heics" : "img",
-      "heif" : "img",
-      "heifs" : "img"
+    "extension": {
+        "heic": "img",
+        "heics": "img",
+        "heif": "img",
+        "heifs": "img"
     },
-    "using": ["mm_solver_1.0.1", "mm_solver_1.0.2", "mm_solver_1.0.3", "mm_solver_1.0.4"],
+    "using": [
+        "mm_solver_1.0.1",
+        "mm_solver_1.0.2",
+        "mm_solver_1.0.3",
+        "mm_solver_1.0.4",
+        "mm_solver_1.0.5"
+    ],
     "runtime": {
         "heifdec": {
             "outputs": [
